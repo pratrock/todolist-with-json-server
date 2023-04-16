@@ -1,19 +1,24 @@
 {
   "todos": [
     {
-      "content": "one",
-      "completed": true,
-      "id": 1
-    },
-    {
       "content": "water the plants",
-      "completed": false,
+      "completed": true,
       "id": 3
     },
     {
-      "content": "don't water",
+      "content": "wash utensils",
       "completed": false,
       "id": 4
+    },
+    {
+      "content": "eat food",
+      "completed": true,
+      "id": 5
+    },
+    {
+      "content": "wash clothes",
+      "completed": false,
+      "id": 6
     }
   ]
 }

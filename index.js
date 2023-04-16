@@ -149,20 +149,6 @@ const View = (() => {
     completedList.innerHTML = completedTemplate;
   };
 
-  /*   const moveTodoToCompleted = (todos, id) => {
-    let todosTemplate = "";
-    const todo = todos.find((todo) => todo.id === parseInt(id));
-    if (todo) {
-      todo.list = "completed";
-      console.log("completed");
-      const liTemplate = `<li listid=${todo.id}><span>${todo.content}</span><button class="delete-btn" id="${todo.id}">delete</button>
-      <button class="move-left-btn">left</button>
-      </li>`;
-      todosTemplate += liTemplate;
-    }
-    completedList.innerHTML = todosTemplate;
-  }; */
-
   const clearInput = () => {
     inputEl.value = "";
   };
@@ -235,81 +221,31 @@ const Controller = ((view, model) => {
 
   const handleRight = () => {
     view.todolistEl.addEventListener("click", (event) => {
+      // Check if the clicked element is move right button
       if (event.target.className === "move-right-btn") {
+        // Get the corresponding todo item's id
         let id = event.target.parentNode.getAttribute("listid");
+        //get the particular content that you want to move to the right
         const [content] = state.todos.filter((todo) => todo.id === +id);
-
-        // model.completeTodo(content, +id);
-        //   view.renderTodos(state);
-        /*      const updatedTodos = state.todos.map((todo) => {
-          if (todo.id === +id) {
-            todo.completed = true;
-            return todo;
-          }
-          return todo;
-        }); */
-        //view.renderTodos(updatedTodos);
-        model.completeTodo(content, +id, true); /* .then((data) => {
-          state.todos = [...updatedTodos];
-          // view.clearInput();
-        }); */
-        //Controller.bootstrap();
-        console.log(content, state);
+        //call the model function
+        model.completeTodo(content, +id, true);
       }
     });
   };
 
   const handleLeft = () => {
     view.completedList.addEventListener("click", (event) => {
+      // Check if the clicked element is move left button
       if (event.target.className === "move-left-btn") {
+        // Get the corresponding todo item's id
         let id = event.target.parentNode.getAttribute("listid");
-        console.log(id);
+        //get the particular content that you want to move to the left
         const [content] = state.todos.filter((todo) => todo.id === +id);
-
+        //call the model function
         model.completeTodo(content, +id, false);
-
-        console.log(content, state);
       }
     });
   };
-
-  /* const handleEdit = () => {
-    view.todolistEl.addEventListener("click", (event) => {
-      if (event.target.className === "edit-btn") {
-        const todoTextElement = view.todolistEl.querySelector(".todo-text");
-        todoTextElement.addEventListener("click", () => {
-          // Convert the todo text span to editable form
-          todoTextElement.contentEditable = true;
-          todoTextElement.focus();
-        });
-        // todoTextElement.contentEditable = true;
-        // todoTextElement.focus();
-
-        todoTextElement.addEventListener("input", (event) => {
-          // Get the edited todo text
-          let editedTodoText = event.target.textContent;
-          let id = event.target.parentNode.getAttribute("listid");
-          console.log(editedTodoText, +id);
-          const edited = {
-            content: editedTodoText,
-          };
-
-          const editButton =
-            view.todolistEl.getElementsByClassName(".edit-btn");
-          editButton.addEventListener("click", (event) => {
-            model.completeTodo(edited, +id, false);
-          });
-        });
-
-        // model.completeTodo(edited, +id, false);
-        //  console.log(content);
-        //  model.completeTodo(content, +id, false);
-
-        //id.contentEditable = true;
-        //id.focus();
-      }
-    });
-  }; */
 
   const handleEdit = () => {
     view.todolistEl.addEventListener("click", (event) => {
