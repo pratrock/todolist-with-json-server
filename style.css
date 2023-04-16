@@ -1,43 +1,162 @@
-.app{
+/* .app {
   display: flex;
   flex-direction: column;
-  border: 1px solid black;
+   border: 1px solid black; 
   border-radius: 5px;
-  width: fit-content;
-  padding:10px;
-  text-align: center;
-  gap:10px;
+  width: fit-content; 
+  padding: 10px; 
+  text-align: center; 
+  gap: 10px;
   align-items: stretch;
-
 }
-
-html{
+ */
+/* html {
   display: flex;
   justify-content: center;
+} */
+
+textarea:focus,
+input:focus {
+  outline: none;
 }
 
-.form{
+span:focus {
+  background-color: #f0f0f0;
+  outline: none;
+}
+.form {
   display: flex;
   flex-direction: row;
-  gap:10px;
+  gap: 10px;
+  justify-content: center;
+}
+.todolists {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+  width: 45%;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 10px;
 }
 
-.todo-list{
-  padding:0;
-  margin: 0;
+.todo-list {
+  /*  margin: 10px; */
   display: flex;
   flex-direction: column;
   list-style-type: none;
-  gap:10px;
+  gap: 10px;
+  width: 80%;
+  /*  background-color: #f0f0f0;
+  padding: 2rem;
+  border-radius: 10px; */
 }
 
-.todo-list li{
+.todo-list li {
   display: flex;
-  justify-content: space-between;
+
+  background-color: #e6e2d3;
+  border: 2px solid #e6e2d3;
+  padding: 1rem;
+  border-radius: 10px;
 }
-.todo-list li span{
+.todo-list li span {
+  flex-grow: 1;
+  text-align: center;
+}
+.completed-list li span {
   flex-grow: 1;
   text-align: center;
 }
 
+.edit-btn {
+  background-color: #008cba;
+  border-radius: 5px;
+  margin: 2px;
+}
 
+.delete-btn {
+  background-color: #c94c4c;
+  border-radius: 5px;
+  margin: 2px;
+}
+.move-right-btn {
+  background-color: #4caf50;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.move-left-btn {
+  background-color: #4caf50;
+  border-radius: 5px;
+  margin: 2px;
+}
+
+.move-right-btn svg {
+  height: 1rem;
+  pointer-events: none;
+}
+
+.move-left-btn svg {
+  height: 1rem;
+  pointer-events: none;
+}
+
+.delete-btn > svg {
+  height: 1rem;
+  pointer-events: none;
+}
+
+.completed-lists {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+  width: 45%;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.completed-list {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  gap: 10px;
+  width: 80%;
+}
+
+.completed-list li {
+  display: flex;
+  background-color: #e6e2d3;
+  border: 2px solid #e6e2d3;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.lists {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.edit-btn > svg {
+  height: 1rem;
+  pointer-events: none;
+}
+
+.submit-btn {
+  background-color: #008cba;
+  color: #e6e2d3;
+  border-color: #008cba;
+  border-radius: 5px;
+}
+input {
+  border: 1px solid #e6e2d3;
+  border-radius: 3px;
+  text-decoration: none;
+  padding: 10px;
+}

@@ -1,8 +1,19 @@
 {
   "todos": [
     {
-      "content": "sdsd",
+      "content": "one",
+      "completed": true,
       "id": 1
+    },
+    {
+      "content": "water the plants",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "content": "don't water",
+      "completed": false,
+      "id": 4
     }
   ]
 }
